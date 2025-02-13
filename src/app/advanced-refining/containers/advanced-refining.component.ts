@@ -30,6 +30,10 @@ export class AdvancedRefiningComponent implements OnInit, OnDestroy {
     빙하: new FormControl(0),
     용암: new FormControl(0),
     골드: new FormControl(1),
+    장인재봉술1: new FormControl(0),
+    장인재봉술2: new FormControl(0),
+    장인야금술1: new FormControl(0),
+    장인야금술2: new FormControl(0),
   });
   bindedForm = new FormGroup({
     파편: new FormControl(true),
@@ -48,6 +52,10 @@ export class AdvancedRefiningComponent implements OnInit, OnDestroy {
     빙하: new FormControl(true),
     용암: new FormControl(true),
     가호: new FormControl(true),
+    장인재봉술1: new FormControl(true),
+    장인재봉술2: new FormControl(true),
+    장인야금술1: new FormControl(true),
+    장인야금술2: new FormControl(true),
   });
   itemForm = new FormGroup({
     type: new FormControl(),
@@ -57,6 +65,7 @@ export class AdvancedRefiningComponent implements OnInit, OnDestroy {
   materials: { name: string; amount: number; price: number }[] = [];
   materialPrice = 0;
   breathes: { name: string; amount: number; price: number }[] = [];
+  paper: { name: string; amount: number; price: number }[] = [];
 
   reports: AdvancedRefineReport[] = [];
 
@@ -138,6 +147,11 @@ export class AdvancedRefiningComponent implements OnInit, OnDestroy {
     }));
     this.materialPrice = this.materials.reduce((sum, x) => sum + x.price, 0);
     this.breathes = Object.entries(table.breath).map(([name, amount]) => ({
+      name,
+      amount,
+      price: priceForm[name] * (bindedForm[name] ? 1 : 0),
+    }));
+    this.paper = Object.entries(table.paper).map(([name, amount]) => ({
       name,
       amount,
       price: priceForm[name] * (bindedForm[name] ? 1 : 0),

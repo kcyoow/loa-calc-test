@@ -1,6 +1,7 @@
 export interface AdvancedRefineTable {
   amount: Record<string, number>;
   breath: Record<string, number>;
+  paper: Record<string, number>;
 }
 
 export type AdvancedRefineTarget = 't3_0' | 't3_1' | 't4_0' | 't4_1' | 't4_2' | 't4_3';
@@ -23,6 +24,9 @@ export const advancedRefineTable: Record<
         축복: 12,
         가호: 4,
       },
+      paper: {
+        장인재봉술1:1,
+      },
     },
     t3_1: {
       amount: {
@@ -37,6 +41,9 @@ export const advancedRefineTable: Record<
         축복: 18,
         가호: 6,
       },
+      paper: {
+        장인재봉술2:1,
+      },
     },
     t4_0: {
       amount: {
@@ -48,6 +55,9 @@ export const advancedRefineTable: Record<
       },
       breath: {
         빙하: 12,
+      },
+      paper: {
+        장인재봉술1:1,
       },
     },
     t4_1: {
@@ -61,6 +71,9 @@ export const advancedRefineTable: Record<
       breath: {
         빙하: 18,
       },
+      paper: {
+        장인재봉술2:1,
+      },
     },
     t4_2: {
       amount: {
@@ -73,6 +86,9 @@ export const advancedRefineTable: Record<
       breath: {
         빙하: 20,
       },
+      paper:{
+
+      },
     },
     t4_3: {
       amount: {
@@ -84,6 +100,8 @@ export const advancedRefineTable: Record<
       },
       breath: {
         빙하: 24,
+      },
+      paper: {
       },
     },
   },
@@ -101,6 +119,9 @@ export const advancedRefineTable: Record<
         축복: 12,
         가호: 4,
       },
+      paper: {
+        장인야금술1:1,
+      },
     },
     t3_1: {
       amount: {
@@ -115,6 +136,9 @@ export const advancedRefineTable: Record<
         축복: 18,
         가호: 6,
       },
+      paper: {
+        장인야금술2:1,
+      },
     },
     t4_0: {
       amount: {
@@ -126,6 +150,9 @@ export const advancedRefineTable: Record<
       },
       breath: {
         용암: 12,
+      },
+      paper: {
+        장인야금술1:1,
       },
     },
     t4_1: {
@@ -139,6 +166,9 @@ export const advancedRefineTable: Record<
       breath: {
         용암: 18,
       },
+      paper: {
+        장인야금술2:1,
+      },
     },
     t4_2: {
       amount: {
@@ -151,6 +181,7 @@ export const advancedRefineTable: Record<
       breath: {
         용암: 20,
       },
+      paper: {}
     },
     t4_3: {
       amount: {
@@ -163,6 +194,7 @@ export const advancedRefineTable: Record<
       breath: {
         용암: 24,
       },
+      paper: {},
     },
   },
 };

@@ -72,6 +72,10 @@ export class MarketPriceService {
       야금술전문: getPrice('야금술 : 쇠락 [13-15]'),
       야금술복합: getPrice('야금술 : 쇠락 [16-19]'),
       야금술업화: getPrice('야금술 : 업화 [11-14]'),
+      장인재봉술1: getPrice('장인의 재봉술 : 1단계'),
+      장인재봉술2: getPrice('장인의 재봉술 : 2단계'),
+      장인야금술1: getPrice('장인의 야금술 : 1단계'),
+      장인야금술2: getPrice('장인의 야금술 : 2단계'),
     };
 
     return Object.fromEntries(

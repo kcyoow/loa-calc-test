@@ -50,6 +50,18 @@
               </div>
             </mat-checkbox>
           </div>
+          <mat-card-subtitle>장인</mat-card-subtitle>
+          <div class="py-4" *ngFor="let paper of paper">
+            <mat-checkbox formControlName="{{paper.name}}">
+              <div class="material-info">
+                <img [attr.src]="'assets/' + paper.name + '.png'" />
+                <span>
+                  x{{ paper.amount | number : ".0-0" }} =
+                  {{ paper.price * paper.amount | number : ".2-2" }}골드</span
+                >
+              </div>
+            </mat-checkbox>
+          </div>
           <div>
             <button (click)="calculate()" mat-raised-button color="primary">
               계산
@@ -100,9 +112,27 @@
                     *ngFor="let breath of element.normalBreathNames"
                     [attr.src]="'assets/' + breath + '.png'"
                   />
+                  <img
+                    class="w-32"
+                    *ngFor="let paper of element.normalPaperNames"
+                    [attr.src]="'assets/' + paper + '.png'"
+                    />
                 </div>
               </td>
             </ng-container>
+
+            <!-- <ng-container matColumnDef="normalPaperName">
+              <th mat-header-cell *matHeaderCellDef>일반턴 장인</th>
+              <td mat-cell *matCellDef="let element" class="w-120">
+                <div style="line-height: 0">
+                  <img
+                    class="w-32"
+                    *ngFor="let paper of element.normalPaperNames"
+                    [attr.src]="'assets/' + paper + '.png'"
+                    />
+                </div>
+              </td>
+            </ng-container> -->
 
             <ng-container matColumnDef="bonusBreathNames">
               <th mat-header-cell *matHeaderCellDef>선조턴 숨결</th>
@@ -113,9 +143,27 @@
                     *ngFor="let breath of element.bonusBreathNames"
                     [attr.src]="'assets/' + breath + '.png'"
                   />
+                  <img
+                    class="w-32"
+                    *ngFor="let paper of element.bonusPaperNames"
+                    [attr.src]="'assets/' + paper + '.png'"
+                    />
                 </div>
               </td>
             </ng-container>
+
+            <!-- <ng-container matColumnDef="bonusPaperNames">
+              <th mat-header-cell *matHeaderCellDef>선조턴 장인</th>
+              <td mat-cell *matCellDef="let element" class="w-120">
+                <div style="line-height: 0">
+                  <img
+                    class="w-32"
+                    *ngFor="let paper of element.bonusPaperNames"
+                    [attr.src]="'assets/' + paper + '.png'"
+                    />
+                </div>
+              </td>
+            </ng-container> -->
 
             <ng-container matColumnDef="expectedTryCount">
               <th mat-header-cell *matHeaderCellDef>평균 트라이</th>
